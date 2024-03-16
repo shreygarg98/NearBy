@@ -43,6 +43,7 @@ extension VenueViewModel {
                 self.venues.append(contentsOf: venues)
                 self.currentPage += 1
                 self.canLoadMore = !venues.isEmpty
+                self.saveVenuesToCache()
             case .failure(let error):
                 self.didEncounterError?(error)
             }
@@ -54,5 +55,19 @@ extension VenueViewModel {
         currentPage = 1
         isLoading = false
         canLoadMore = true
+    }
+    func saveVenuesToCache() {
+        let encoder = JSONEncoder()
+        if let encodedVenues = try? encoder.encode(venues) {
+            UserDefaults.standard.set(encodedVenues, forKey: "cachedVenues")
+        }
+    }
+    
+    func loadVenuesFromCache() {
+        let decoder = JSONDecoder()
+        if let savedVenues = UserDefaults.standard.object(forKey: "cachedVenues") as? Data,
+           let decodedVenues = try? decoder.decode([Venue].self, from: savedVenues) {
+            self.venues = decodedVenues
+        }
     }
 }
