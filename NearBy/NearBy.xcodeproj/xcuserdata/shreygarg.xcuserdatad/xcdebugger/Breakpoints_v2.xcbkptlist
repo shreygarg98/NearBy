@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4CEA4EAA-176A-44B6-AEE6-26F64AFE73FD"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A097AB67-9702-4DCC-8E93-F7AB636FEE55"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NearBy/NearBy/VenueViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "loadVenues(latitude:longitude:query:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A097AB67-9702-4DCC-8E93-F7AB636FEE55 - 2b62d6aa6fb18b70"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;NearBy.Venue&gt;, Swift.Error&gt;) -&gt; () in NearBy.VenueViewModel.loadVenues(latitude: Swift.Double, longitude: Swift.Double, page: Swift.Int, query: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "NearBy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shreygarg/Documents/NearBy/NearBy/NearBy/VenueViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "344">
+               </Location>
+               <Location
+                  uuid = "A097AB67-9702-4DCC-8E93-F7AB636FEE55 - 6c2c7d0bad828f7e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;NearBy.Venue&gt;, Swift.Error&gt;) -&gt; () in NearBy.VenueViewModel.loadVenues(latitude: Swift.Double, longitude: Swift.Double, query: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "NearBy"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shreygarg/Documents/NearBy/NearBy/NearBy/VenueViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "344">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D9FC2DE5-B9B7-4782-B804-096E6F94E338"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NearBy/NearBy/VenuesViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "sliderValueChanged(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D0FC3D1-2B5E-4FB5-969F-8BD6FDEF4A6B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NearBy/NearBy/VenuesViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F60D9E6F-78C9-4DDE-B46B-019F24F9F0C8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NearBy/NearBy/VenuesViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
