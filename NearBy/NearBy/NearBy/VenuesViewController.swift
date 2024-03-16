@@ -12,6 +12,8 @@ class VenuesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var distanceSlider: UISlider!
+    var activityIndicator: UIActivityIndicatorView!
+    
     var locationManager = CLLocationManager()
     var userLocation: CLLocation?
     
@@ -33,9 +35,18 @@ class VenuesViewController: UIViewController {
         setupSearchBar()
         setupDistanceSlider()
         bindViewModel()
-        viewModel.loadVenuesFromCache()
+        
+        activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.center = self.view.center
+        self.view.addSubview(activityIndicator)
+        
+        let hasCachedData = viewModel.loadVenuesFromCache()
+        if hasCachedData {
+            viewModel.showLoader = false
+        }
         configureLocationServices()
         viewModel.loadVenues(latitude: 12.971599, longitude: 77.594566)
+        
     }
     
     private func setupDistanceSlider() {
@@ -71,12 +82,22 @@ class VenuesViewController: UIViewController {
             self?.allVenues = venues
             self?.tableView.reloadData()
         }
+        
+        viewModel.isLoadingChanged = { [weak self] isLoading in
+            DispatchQueue.main.async {
+                if isLoading {
+                    self?.activityIndicator.startAnimating()
+                } else {
+                    self?.activityIndicator.stopAnimating()
+                }
+            }
+        }
     }
-
+    
     @objc func sliderValueChanged(_ sender: UISlider) {
         let filterDistance = sender.value
         print("Slider value: \(filterDistance)")
-
+        
         filteredVenues = allVenues.filter { venue in
             let distanceToVenue = calculateDistanceToVenue(venue)
             print("Distance to venue: \(distanceToVenue) km")
@@ -106,8 +127,9 @@ extension VenuesViewController: UITableViewDataSource, UITableViewDelegate {
         let venue = filteredVenues[indexPath.row]
         cell.configure(with: venue)
         
-        // Load more venues when scrolling to the bottom
-        if indexPath.row == filteredVenues.count - 4 {
+        
+        let nearBottom = indexPath.row >= filteredVenues.count - 4
+        if nearBottom && !viewModel.getIsLoading && viewModel.getcanLoadMore {
             viewModel.loadVenues(latitude: 12.971599, longitude: 77.594566)
         }
         
