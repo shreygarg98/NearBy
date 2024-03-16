@@ -33,6 +33,7 @@ class VenuesViewController: UIViewController {
         setupSearchBar()
         setupDistanceSlider()
         bindViewModel()
+        viewModel.loadVenuesFromCache()
         configureLocationServices()
         viewModel.loadVenues(latitude: 12.971599, longitude: 77.594566)
     }
